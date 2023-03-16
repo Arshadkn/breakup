@@ -49,6 +49,7 @@ class temp(object):
     
 #For Clone  Bottt 
 class clone_temp(object):
+    ME = None
     U_NAME = None
     B_NAME = None
     CLONE_OWN = None
