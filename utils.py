@@ -46,6 +46,13 @@ class temp(object):
     U_NAME = None
     B_NAME = None
     SETTINGS = {}
+    
+#For Clone  Bottt 
+class clone_temp(object):
+    U_NAME = None
+    B_NAME = None
+    CLONE_OWN = None
+    
 
 async def is_subscribed(bot, query):
 
