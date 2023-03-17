@@ -2,7 +2,7 @@ from urllib import response
 import openai
 from pyrogram import Client, filters, enums
 from info import ADMINS
-
+import datetime
 
 OPEN_AI_KEY = "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"
 
@@ -20,3 +20,15 @@ async def delvarrrssz(bot, message):
 
     response = ai_responses(query)
     await message.reply_text(response)
+    
+@Client.on_message(filters.command("get") & filters.user(ADMINS))
+async def delvarrrssz(bot, message):
+    m = datetime.datetime.now
+    time = m.hour
+    if time < 12:
+        get="Good Morning"
+    elif time < 15: 
+        get="Good After Noon"
+    else:
+        get="Good Even"
+    await message.reply_text(f"{get}")
