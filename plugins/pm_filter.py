@@ -919,7 +919,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims'),
             InlineKeyboardButton('♚ ᴏᴡɴᴇʀ ♚', url='https://t.me/Master_brooi')
             ],[      
-            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help'),
+            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help2'),
             InlineKeyboardButton('⍟ ᴀʙᴏᴜᴛ ⍟', callback_data='abouut')
             ],[
             InlineKeyboardButton('⌬ sᴜᴘᴘᴏʀᴛ ⌬', url='https://t.me/botsupportgroupmst')
@@ -953,7 +953,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims'),
             InlineKeyboardButton('♚ ᴏᴡɴᴇʀ ♚', url='https://t.me/Master_brooi')
             ],[      
-            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help'),
+            InlineKeyboardButton('〄 ʜᴇʟᴘ 〄', callback_data='help2'),
             InlineKeyboardButton('⍟ ᴀʙᴏᴜᴛ ⍟', callback_data='about')
             ],[
             InlineKeyboardButton('⌬ sᴜᴘᴘᴏʀᴛ ⌬', url='https://t.me/botsupportgroupmst')
@@ -1089,7 +1089,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )    
-    elif query.data == "help":
+    elif query.data == "help2":
         buttons = [[
             InlineKeyboardButton('🎁 Mᴏʀᴇ Fᴇᴀᴛᴜʀᴇꜱ 🎁', callback_data='help')
         ], [
@@ -1124,7 +1124,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
              parse_mode=enums.ParseMode.HTML
         )
         
-    elif query.data == "help2":
+    elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('sʜᴀʀᴇ ᴛᴇxᴛ​', callback_data='share_txt'),
             InlineKeyboardButton('ɢᴇɴ-ᴘᴀss​', callback_data='gen_pass'),
@@ -1204,9 +1204,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode=enums.ParseMode.HTML
             )
-        else:
-            await query.answer("Your Not Authorizer ⚠️", show_alert=True)
-
     elif query.data == "source":
         buttons = [[
             InlineKeyboardButton('⇍ʙᴀᴄᴋ', callback_data='about')
