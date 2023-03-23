@@ -3,7 +3,7 @@ from info import ADMINS, API_ID, API_HASH
 import re
 from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
 from utlis import clone_temp
-from clone_botsdb.py import save_bot_details
+from database.clone_botsdb import save_bot_details
 
 @Client.on_message(filters.command("clone") & filters.user(ADMINS))
 async def delvarrrssz(bot, message):
