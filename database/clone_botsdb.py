@@ -9,7 +9,8 @@ client = pymongo.MongoClient(DATABASE_URI)
 db = client[DATABASE_NAME]
 bots_col = db["bots"]
 
-def save_bot_details(bot.username, bot_token):
+async def save_bot_details(bot.username, bot_token):
+    
   
 
     # Parse the response to extract the bot details
