@@ -9,7 +9,9 @@ client = pymongo.MongoClient(DATABASE_URI)
 db = client[DATABASE_NAME]
 bots_col = db["bots"]
 
-async def save_bot_details(bot.username, bot_token):
+async def save_bot_details(bot_details):
+    bots_col.insert_one(bot_details)
+
     
   
 
