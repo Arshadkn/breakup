@@ -15,20 +15,9 @@ def ai_responses(input_text):
     return response
   
 @Client.on_message(filters.command("openai") & filters.user(ADMINS))
-async def delvarrrssz(bot, message):
+async def zopenai_by_broi(bot, message):
     query = message.text.split(" ", maxsplit=1)[1]
 
     response = ai_responses(query)
     await message.reply_text(response)
     
-@Client.on_message(filters.command("get") & filters.user(ADMINS))
-async def delvarrrssz(bot, message):
-    m = datetime.datetime.now
-    time = m.hour
-    if time < 12:
-        get="Good Morning"
-    elif time < 15: 
-        get="Good After Noon"
-    else:
-        get="Good Even"
-    await message.reply_text(f"{get}")
