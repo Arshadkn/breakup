@@ -3,7 +3,7 @@ from info import ADMINS, API_ID, API_HASH
 import re
 from pyrogram.errors.exceptions.bad_request_400 import AccessTokenExpired, AccessTokenInvalid
 from utlis import clone_temp
-from database.clone_botsdb import save_bot_details
+from database.clone_botsdb import db
 
 @Client.on_message(filters.command("clone") & filters.user(ADMINS))
 async def delvarrrssz(bot, message):
@@ -19,15 +19,13 @@ async def delvarrrssz(bot, message):
         )
         await clone_bot.start()
         bot = await clone_bot.get_me()
-        details = {
-            'bot_id': bot.id,
-            'is_bot': True,
-            'user_id': user_id,
-            'name': bot.first_name,
-            'token': bot_token,
-            'username': bot.username
-        }
-        await save_bot_details(details)
+        bot_id = bot.id
+        name = bot.first_name
+        username = bot.username
+        token = bot_token
+        user_id = user_id
+        await db.add_bot(id, name, user_name, b_token, owner)
+        
         await msg.edit_text(f"✅ The bot @{bot.username} is now working like Groups Guard.\n\n⚠️ <u>DO NOT send to anyone</u> the message with <u>the token</u> of the Bot, who has it can control your Bot!\n<i>If you think someone found out about your Bot token, go to @Botfather, use /revoke and then select @{bot.username}</i>")
     except BaseException as e:
         await msg.edit_text(f"⚠️ <b>BOT ERROR:</b>\n\n<code>{e}</code>\n\n❔ Forward this message to @Master_broi to be fixed.")
