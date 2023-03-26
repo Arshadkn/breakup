@@ -24,6 +24,10 @@ class Database:
     async def add_bot(self, id, name, user_name, b_token, owner):
         bot = self.new_bot(id, name, user_name, b_token, owner)
         await self.col.insert_one(bot)
-
+        
+    async def is_bot_exist(self, token):
+        bot = await self.col.find_one({'token':str(token)})
+        return bool(bot)
+    
 
 db = Database(DATABASE_URI, DATABASE_NAME)
