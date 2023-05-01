@@ -38,3 +38,4 @@ python-math
 Pillow
 speedtest-cli
 python-dotenv
+pyromod
